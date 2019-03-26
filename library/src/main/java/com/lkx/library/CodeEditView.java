@@ -158,7 +158,7 @@ public class CodeEditView extends LinearLayout implements TextWatcher, View.OnCl
             textView.setBackgroundResource(R.drawable.shape_border_normal);
             textView.setGravity(Gravity.CENTER);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize);
-            textView.getPaint().setFakeBoldText(true);
+//            textView.getPaint().setFakeBoldText(true);
             textView.setLayoutParams(params);
             textView.setInputType(inputType);
             textView.setTextColor(textColor);
