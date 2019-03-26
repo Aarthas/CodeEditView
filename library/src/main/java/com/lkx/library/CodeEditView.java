@@ -63,12 +63,12 @@ public class CodeEditView extends LinearLayout implements TextWatcher, View.OnCl
     }
 
     private void initData(Context context, AttributeSet attrs) {
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CodeEditView);
-        borderSize = array.getInteger(R.styleable.CodeEditView_borderSize, 35);
-        borderMargin = array.getInteger(R.styleable.CodeEditView_borderMargin, 10);
-        textSize = array.getInteger(R.styleable.CodeEditView_textSize, 8);
-        textColor = array.getColor(R.styleable.CodeEditView_textColor, Color.BLACK);
-        editViewNum = array.getInteger(R.styleable.CodeEditView_borderNum, 6);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CodeEditView1);
+        borderSize = array.getInteger(R.styleable.CodeEditView1_ceBorderSize, 35);
+        borderMargin = array.getInteger(R.styleable.CodeEditView1_ceBorderMargin, 10);
+        textSize = array.getInteger(R.styleable.CodeEditView1_ceTextSize, 8);
+        textColor = array.getColor(R.styleable.CodeEditView1_ceTextColor, Color.BLACK);
+        editViewNum = array.getInteger(R.styleable.CodeEditView1_ceBorderNum, 6);
     }
 
     /**
