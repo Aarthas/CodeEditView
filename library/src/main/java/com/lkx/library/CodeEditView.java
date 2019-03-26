@@ -12,6 +12,7 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -69,6 +70,7 @@ public class CodeEditView extends LinearLayout implements TextWatcher, View.OnCl
         textSize = array.getInteger(R.styleable.CodeEditView1_ceTextSize, 8);
         textColor = array.getColor(R.styleable.CodeEditView1_ceTextColor, Color.BLACK);
         editViewNum = array.getInteger(R.styleable.CodeEditView1_ceBorderNum, 6);
+        array.recycle();
     }
 
     /**
@@ -87,9 +89,10 @@ public class CodeEditView extends LinearLayout implements TextWatcher, View.OnCl
      */
     @Override
     public boolean onLongClick(View v) {
-        showPopupWindow();
+//        showPopupWindow();
         return true;
     }
+
 
     private void showPopupWindow() {
         View popupwindow = LayoutInflater.from(mContext).inflate(R.layout.popupwindow_view, null);
@@ -147,14 +150,14 @@ public class CodeEditView extends LinearLayout implements TextWatcher, View.OnCl
         initEditText(context);
         //设置方格间距
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                DensityUtil.dip2px(mContext, borderSize), DensityUtil.dip2px(mContext, borderSize));
+                DensityUtil.dip2px(mContext, 40), DensityUtil.dip2px(mContext, 48));
         params.setMargins(DensityUtil.dip2px(mContext, borderMargin), 0, 0, 0);
         //设置方格文字
         for (int i = 0; i < editViewNum; i++) {
             TextView textView = new TextView(mContext);
             textView.setBackgroundResource(R.drawable.shape_border_normal);
             textView.setGravity(Gravity.CENTER);
-            textView.setTextSize(DensityUtil.sp2px(mContext, textSize));
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSize);
             textView.getPaint().setFakeBoldText(true);
             textView.setLayoutParams(params);
             textView.setInputType(inputType);
